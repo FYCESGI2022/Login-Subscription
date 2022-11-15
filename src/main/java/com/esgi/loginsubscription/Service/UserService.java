@@ -1,6 +1,7 @@
 package com.esgi.loginsubscription.Service;
 
 import com.esgi.loginsubscription.config.CodeException;
+import com.esgi.loginsubscription.exception.BadRequestException;
 import com.esgi.loginsubscription.exception.EntityNotFoundException;
 import com.esgi.loginsubscription.model.Role;
 import com.esgi.loginsubscription.model.User;
@@ -83,7 +84,7 @@ public class UserService implements  UserDetailsService {
             return userRepository.save(user);
         }
         log.error("User found in the database: {}",user);
-        throw new IllegalStateException("username is already taken!");
+        throw new BadRequestException("username is already taken!");
     }
 
 
