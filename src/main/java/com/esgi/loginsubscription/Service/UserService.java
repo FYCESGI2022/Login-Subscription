@@ -86,7 +86,7 @@ public class UserService implements  UserDetailsService {
         log.error("User found in the database: {}",user);
         throw new BadRequestException("username is already taken!");
     }
-//test
+//test 2
 
 
     @Transactional
