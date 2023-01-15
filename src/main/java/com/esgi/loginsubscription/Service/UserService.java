@@ -75,7 +75,7 @@ public class UserService implements  UserDetailsService {
         return userRepository.save(user);
     }
     public User saveUser(User user) {
-
+log.info(user.toString());
         if(userRepository.findFirstByUsername(user.getUsername())==null)
         {
             log.info("Saving new user {} to the database",user.getUsername());

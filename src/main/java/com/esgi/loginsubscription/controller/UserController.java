@@ -28,7 +28,7 @@ public class UserController {
     @Autowired
     private final ModelMapper modelMapper;
 
-    @PreAuthorize("hasRole('ROLE_ADMIN')")
+
     @GetMapping(path ="/users",produces = {MediaType.APPLICATION_JSON_VALUE})
     public ResponseEntity<List<UserResponse>>getUsers(){
         List<User> users = userService.getUsers();
