@@ -75,7 +75,7 @@ public class UserService implements  UserDetailsService {
         return userRepository.save(user);
     }
     public User saveUser(User user) {
-
+log.info(user.toString());
         if(userRepository.findFirstByUsername(user.getUsername())==null)
         {
             log.info("Saving new user {} to the database",user.getUsername());
@@ -84,9 +84,9 @@ public class UserService implements  UserDetailsService {
             return userRepository.save(user);
         }
         log.error("User found in the database: {}",user);
-        throw new BadRequestException(CodeException.UNSUCCESSFUL_SIGNUP);
+        throw new BadRequestException("username is already taken!");
     }
-
+//test 2
 
 
     @Transactional
